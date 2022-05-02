@@ -12,25 +12,31 @@ public class EmployeeWage {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation");
+
         int dailyWage = 0;
         int workDaysPerMonth = 0;
-        double empCheck = Math.floor(Math.random() * 10)%3;
-        switch((int) empCheck){
-            case IS_FULL_TIME :
-                dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-                System.out.println("Daily Wage is "+ dailyWage);
-                workDaysPerMonth = WORK_DAYS * dailyWage;
-                System.out.println("wages for a month "+ workDaysPerMonth);
-                break;
-            case IS_PART_TIME:
-                dailyWage = WAGE_PER_HOUR * PART_TIME_HOUR;
-                System.out.println("Daily Wage is "+ dailyWage);
-                workDaysPerMonth = WORK_DAYS * dailyWage;
-                System.out.println("wages for a month "+ workDaysPerMonth);
-                break;
-            default:
-                System.out.println("Absent");
+        int totalWage = 0;
+        for(int i=1; i<=20; i++){
+            double empCheck = Math.floor(Math.random() * 10)%3;
+            switch((int) empCheck){
+                case IS_FULL_TIME :
+                    dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                    System.out.println("Daily Wage is "+ dailyWage);
+//                    workDaysPerMonth = WORK_DAYS * dailyWage;
+//                    System.out.println("wages for a month "+ workDaysPerMonth);
+                    break;
+                case IS_PART_TIME:
+                    dailyWage = WAGE_PER_HOUR * PART_TIME_HOUR;
+                    System.out.println("Daily Wage is "+ dailyWage);
+//                    workDaysPerMonth = WORK_DAYS * dailyWage;
+//                    System.out.println("wages for a month "+ workDaysPerMonth);
+                    break;
+                default:
+                    System.out.println("Absent");
+            }
+            totalWage = totalWage + dailyWage;
         }
+        System.out.println("total wage "+ totalWage);
     }
 }
 
